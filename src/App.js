@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ProductGrid from './Components/ProductGrid';
 import Products from './products.json';
-import SideBar from './Components/Sidebar';
+import SideBar from './Components/SideBar';
 import './App.css';
 
 class App extends Component {
@@ -10,6 +10,13 @@ class App extends Component {
     this.state= {
       products: Products,
     }
+
+    this.checkboxHandler = this.checkboxHandler.bind(this);
+  }
+
+  checkboxHandler(e){
+    e.preventDefault();
+    console.log('hi')
   }
 
 
@@ -20,7 +27,7 @@ class App extends Component {
           Fender
         </div>
         <div className="side_bar">
-         <SideBar />
+         <SideBar checkboxHandler={this.checkboxHandler} products={this.state.products} />
         </div>
         <div className="product_grid">
          <ProductGrid products={this.state.products} />
