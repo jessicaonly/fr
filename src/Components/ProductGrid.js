@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Products from '../products.json';
+// import Products from '../products.json';
 import Img from 'react-image';
 import './ProductGrid.css';
 //import fallBack from '../Assets/no-image.jpg'
@@ -11,15 +11,14 @@ class ProductGrid extends Component {
   constructor(props){
     super(props);
     this.state = {
-      products: []
     }
   }
 
   render() {
     return (
-      <div class="wrapper">
-       {Products.documents.map((productDetail, index)=>{
-         return <div class="item"> 
+      <div className="wrapper">
+       {this.props.products.documents.map((productDetail, index)=>{
+         return <div className="item"> 
            <h1>{productDetail.productNo}</h1>
            <Img src={
              [productDetail.images[1],
