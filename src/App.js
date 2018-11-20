@@ -8,15 +8,41 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state= {
-      products: Products,
+      products: Products.documents,
     }
 
-    this.checkboxHandler = this.checkboxHandler.bind(this);
+    this.seriesHandler = this.seriesHandler.bind(this);
+    this.productTypeHandler = this.productTypeHandler.bind(this);
   }
 
-  checkboxHandler(e){
+  seriesHandler(e){
     e.preventDefault();
-    console.log('hi')
+    const target = e.target;
+    let filteredProducts = [];
+    
+    this.state.products.map((singleProduct, index) => {
+      if (singleProduct.series === target.name){
+       filteredProducts.push(singleProduct);
+      }
+    });
+    this.setState({
+      products: filteredProducts
+    })
+  }
+
+  productTypeHandler(e){
+    e.preventDefault();
+    const target = e.target;
+    let filteredProducts = [];
+    
+    this.state.products.map((singleProduct, index) => {
+      if (singleProduct.productType === target.name){
+       filteredProducts.push(singleProduct);
+      }
+    });
+    this.setState({
+      products: filteredProducts
+    })
   }
 
 
@@ -27,7 +53,7 @@ class App extends Component {
           Fender
         </div>
         <div className="side_bar">
-         <SideBar checkboxHandler={this.checkboxHandler} products={this.state.products} />
+         <SideBar seriesHandler={this.seriesHandler} productTypeHandler={this.productTypeHandler} products={this.state.products} />
         </div>
         <div className="product_grid">
          <ProductGrid products={this.state.products} />

@@ -17,7 +17,7 @@ class ProductGrid extends Component {
   render() {
     return (
       <div className="wrapper">
-       {this.props.products.documents.map((productDetail, index)=>{
+       {this.props.products.map((productDetail, index)=>{
          return <div className="item"> 
            <h1>{productDetail.productNo}</h1>
            <Img src={
