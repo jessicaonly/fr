@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 import Products from '../products.json';
 import Img from 'react-image';
-import fallBack from '../Assets/no-image.jpg'
+import './ProductGrid.css';
+//import fallBack from '../Assets/no-image.jpg'
+//import { Container, Row } from 'react-bootstrap';
+
+
 
 class ProductGrid extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      products: []
+    }
+  }
 
   render() {
     return (
-      <div>
-       <h1>Hello World!</h1>
+      <div class="wrapper">
        {Products.documents.map((productDetail, index)=>{
-         return <div> 
+         return <div class="item"> 
            <h1>{productDetail.productNo}</h1>
            <Img src={
              [productDetail.images[1],
