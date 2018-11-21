@@ -9,6 +9,7 @@ class App extends Component {
     super(props);
     this.state= {
       products: Products.documents,
+      itemChecked: {}
     }
 
     this.seriesHandler = this.seriesHandler.bind(this);
@@ -19,30 +20,37 @@ class App extends Component {
     e.preventDefault();
     const target = e.target;
     let filteredProducts = [];
-    
-    this.state.products.map((singleProduct, index) => {
+    let fullProductList = Products.documents;
+
+    fullProductList.map((singleProduct, index) => {
       if (singleProduct.series === target.name){
        filteredProducts.push(singleProduct);
       }
     });
     this.setState({
       products: filteredProducts
-    })
+    });
   }
 
   productTypeHandler(e){
     e.preventDefault();
     const target = e.target;
     let filteredProducts = [];
-    
-    this.state.products.map((singleProduct, index) => {
+    let fullProductList = Products.documents;
+
+    if (target.name ==='showAll') {
+      this.setState({products: fullProductList})
+      return;
+    };
+
+    fullProductList.map((singleProduct, index) => {
       if (singleProduct.productType === target.name){
        filteredProducts.push(singleProduct);
       }
     });
     this.setState({
       products: filteredProducts
-    })
+    });
   }
 
 

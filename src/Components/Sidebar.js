@@ -7,9 +7,14 @@ class SideBar extends Component {
     super(props);
     this.state = {
       series: [],
-      productType: []
-    }
+      productType: [],
+      itemChecked: {},
+    };
   }
+
+  
+
+
 
   componentWillMount(){
     this.props.products.map((singleProduct, index) => {
@@ -37,13 +42,10 @@ class SideBar extends Component {
           {"\n"}
           {this.state.series.map((seriesName, index)=>{
             return <div className="individualSeries">
-              <label>
-              {seriesName}
-              <input
+              <button
                 name={seriesName}
-                type="checkbox"
-                onChange={this.props.seriesHandler} />
-              </label>
+                onClick={this.props.seriesHandler}
+                 > {seriesName}</button>
             </div>
           })}
         </div>
@@ -53,20 +55,26 @@ class SideBar extends Component {
           {"\n"}
           {this.state.productType.map((product, index)=>{
             return <div className="products"> 
-              <label>
-              {product}
-              <input 
+              <button 
                 name={product}
-                type="checkbox"
-                onChange={this.props.productTypeHandler} />
-            </label>
+                onClick={this.props.productTypeHandler}
+                >{product} </button>
          </div> 
         })}
+       </div>
+
+       <div className ="show_all">
+       <button 
+                name='showAll'
+                onClick={this.props.productTypeHandler}
+                > Show All </button>
        </div>
     </div>
     );
   }
 }
+
+
 
 export default SideBar;
 
