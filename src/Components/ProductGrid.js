@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-// import Products from '../products.json';
 import Img from 'react-image';
 import './ProductGrid.css';
-//import fallBack from '../Assets/no-image.jpg'
-//import { Container, Row } from 'react-bootstrap';
+import fallBack from '../Assets/fender.jpg'
 
 
 
@@ -11,23 +9,27 @@ class ProductGrid extends Component {
   constructor(props){
     super(props);
     this.state = {
+      results: [],
     }
   }
+
+
 
   render() {
     return (
       <div className="wrapper">
        {this.props.products.map((productDetail, index)=>{
          return <div className="item"> 
-           <h1>{productDetail.productNo}</h1>
+           <h4>{productDetail.skuDisplayName_en[0]}</h4>
            <Img src={
              [productDetail.images[1],
-             'http://sanpai-japan.com/wp-content/uploads/2017/06/no-image-icon-24.jpg']
+             fallBack]
             }
             />
-           <p>{productDetail.skuDisplayName_en[0]}</p>
+           <p>{productDetail.productNo}</p>
          </div>
        })}
+
       </div>
     );
   }

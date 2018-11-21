@@ -8,12 +8,8 @@ class SideBar extends Component {
     this.state = {
       series: [],
       productType: [],
-      itemChecked: {},
     };
   }
-
-  
-
 
 
   componentWillMount(){
