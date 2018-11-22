@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './ItemDetail.css';
 import Img from 'react-image';
 import fallBack from '../Assets/fender.jpg'
@@ -11,10 +11,7 @@ const ItemDetail = ({ handleClose, show, name, pic, type, brand, color, productN
     <div className={showHideClassName}>
       <section className="item-main">
         <p><b>{name}</b></p>
-        <Img src={
-             [pic,
-             fallBack]
-            }
+        <Img src={ [pic, fallBack] }
         />
        <p><b>Brand: </b>{brand}</p>
        <p><b>Category:</b> {type}</p>

@@ -33,10 +33,13 @@ button:hover{
   }
 
   .product_type {
-    padding: 5px;
+    padding: 10px;
     grid-column: 2;
     grid-row: 2 / 5;
     text-align: center;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
   }
 
   .show_all {

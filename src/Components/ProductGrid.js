@@ -10,7 +10,6 @@ class ProductGrid extends Component {
   constructor(props){
     super(props);
     this.state = {
-      results: [],
       show: false,
     }
 
@@ -19,17 +18,16 @@ class ProductGrid extends Component {
 
   showDetail = (productDetail) => {
     this.setState({
-    itemName: productDetail.skuDisplayName_en[0],
-    image: productDetail.images[1],
-    productType: productDetail.productType,
-    brand: productDetail.brand,
-    featuredColor: productDetail.color_en[0],
-    productNumber: productDetail.productNo,
-    show: true
+      itemName: productDetail.skuDisplayName_en[0],
+      image: productDetail.images[1],
+      productType: productDetail.productType,
+      brand: productDetail.brand,
+      featuredColor: productDetail.color_en[0],
+      productNumber: productDetail.productNo,
+      show: true
     });
   }
 
- 
 
   hideDetail = () => {
     this.setState({ show: false });
@@ -42,30 +40,29 @@ class ProductGrid extends Component {
       <div className="wrapper">
       <div className="modal">
        <ItemDetail 
-        show={this.state.show} 
-        handleClose={this.hideDetail} 
-        name={this.state.itemName}
-        pic={this.state.image}
-        type={this.state.productType}
-        brand={this.state.brand}
-        color={this.state.featuredColor}
-        productNumber={this.state.productNumber}
-        >
+          show={this.state.show} 
+          handleClose={this.hideDetail} 
+          name={this.state.itemName}
+          pic={this.state.image}
+          type={this.state.productType}
+          brand={this.state.brand}
+          color={this.state.featuredColor}
+          productNumber={this.state.productNumber}
+      >
         <p> Test </p>
       </ItemDetail>
        </div>
        
        <div className="product_grid">
-       {this.props.products.map((productDetail, index)=>{
+        {this.props.products.map((productDetail, index)=>{
          return <div className="each_item" onClick={() => this.showDetail(productDetail)} style={{cursor:'pointer'}} key={productDetail.productNo}> 
            <h5>{productDetail.skuDisplayName_en[0]}</h5>
            <Img src={
-             [productDetail.images[1],
-             fallBack]
+             [productDetail.images[1], fallBack]
             }
            />
          </div>
-       })}
+       })};
       </div>
       </div>
     );
