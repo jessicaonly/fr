@@ -16,11 +16,11 @@ const ItemDetail = ({ handleClose, show, name, pic, type, brand, color, productN
              fallBack]
             }
         />
-        <p><b>Brand: </b>{brand}</p>
-        <p><b>Category:</b> {type}</p>
+       <p><b>Brand: </b>{brand}</p>
+       <p><b>Category:</b> {type}</p>
        <p><b>Color:</b> {color} </p>
        <p><b>Product Number:</b> {productNumber} </p>
-        <button onClick={handleClose}>close</button>
+        <button className="close_button" onClick={handleClose}>Back to Products</button>
       </section>
     </div>
   );

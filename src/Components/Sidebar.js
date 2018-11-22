@@ -29,12 +29,9 @@ class SideBar extends Component {
   render() {
     console.log(this.props)
     return (
-      <div className="wrapper">
-        <div className="header">
-          <h2> Filter </h2>
-        </div>
+      <div className="sidebar_wrapper">
         <div className="series">
-          <b>Series:</b>
+          <b>SERIES</b>
           {"\n"}
           {this.state.series.map((seriesName, index)=>{
             return <div className="individualSeries">
@@ -47,7 +44,7 @@ class SideBar extends Component {
         </div>
 
         <div className="product_type">
-          <b> Product Type: </b>
+          <b>PRODUCT</b>
           {"\n"}
           {this.state.productType.map((product, index)=>{
             return <div className="products"> 

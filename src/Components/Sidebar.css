@@ -1,4 +1,51 @@
-.wrapper {
-  display: flex;
-  flex-direction: column;
+button {
+  background-color: white;
+  color: #f44336;
+  padding: 10px 22px;
+  margin: 5px;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  width: 80%;
 }
+  
+button:hover{
+  background-color: #f44336;
+  color: white;
+}
+  
+  .sidebar_wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+
+
+  .series {
+    padding: 10px;
+    grid-column: 1;
+    grid-row: 2 / 5;
+    text-align: center;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  .product_type {
+    padding: 5px;
+    grid-column: 2;
+    grid-row: 2 / 5;
+    text-align: center;
+  }
+
+  .show_all {
+    padding: 5px;
+    grid-column: 1 / 5;
+    grid-row: 5;
+    text-align: center;
+  }
+
+
+
+

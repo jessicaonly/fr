@@ -3,13 +3,20 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+  grid-auto-columns: 300px 100px;
 }
 
 
 .each_item {
-  background-color: #80cbc4;
-  border: 1px solid #fff;
+  background-color: whitesmoke;
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid red;
   padding: 20px;
   font-size: 30px;
   text-align: center;
+  width: 90%;
+}
+
+.each_item:hover {
+  background-color: white;
 }

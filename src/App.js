@@ -3,6 +3,8 @@ import ProductGrid from './Components/ProductGrid';
 import Products from './products.json';
 import SideBar from './Components/SideBar';
 import './App.css';
+import logo from './Assets/logo.png';
+import footer from './Assets/footer.png';
 
 class App extends Component {
   constructor(props){
@@ -58,7 +60,13 @@ class App extends Component {
     return (
       <div className="wrapper">
         <div className="header">
-          Fender
+          <a className="logo" href="http://www.fender.com"> <img src={logo} alt='Fender Logo'/></a>
+          <div className="header-right">
+          <a className="shop" href="https://shop.fender.com/en-US/start">SHOP </a>
+          <a className="play" href="https://www.fender.com/play">PLAY </a>
+          <a className="tine" href="https://www.fender.com/online-guitar-tuner/">TUNE </a>
+          <a className="tone" href="https://www.fender.com/tone">TONE</a>
+          </div>
         </div>
         <div className="side_bar">
          <SideBar seriesHandler={this.seriesHandler} productTypeHandler={this.productTypeHandler} products={this.state.products} />
@@ -67,7 +75,7 @@ class App extends Component {
          <ProductGrid products={this.state.products} />
         </div>
         <div className="footer">
-          footer
+          <img src={footer} alt='Fender Logo'/>
         </div>
       </div>
     );

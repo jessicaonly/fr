@@ -13,13 +13,46 @@
   grid-auto-rows: minmax(100px, auto);
 }
 
+
 .header {
+  font-family: 'Open Sans', sans-serif;
   grid-column: 1 / 5;
   grid-row: 1;
   text-align: center;
+  border-bottom: solid 2px whitesmoke;
+}
+
+.header a {
+  float: left;
+  color: black;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header-right {
+  float: right;
+}
+
+.header a:hover {
+  color: red;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
 }
 
 .side_bar {
+  font-family: 'Open Sans', sans-serif;
   grid-column: 1;
   grid-row: 2 / 5;
 }
@@ -32,4 +65,8 @@
   grid-column: 1 / 5;
   grid-row: 5;
   text-align: center;
+  background-color: whitesmoke;
 }
+
+
+

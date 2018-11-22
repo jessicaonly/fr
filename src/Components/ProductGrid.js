@@ -57,14 +57,13 @@ class ProductGrid extends Component {
        
        <div className="product_grid">
        {this.props.products.map((productDetail, index)=>{
-         return <div className="each_item" onClick={() => this.showDetail(productDetail)} key={productDetail.productNo}> 
-           <h4>{productDetail.skuDisplayName_en[0]}</h4>
+         return <div className="each_item" onClick={() => this.showDetail(productDetail)} style={{cursor:'pointer'}} key={productDetail.productNo}> 
+           <h5>{productDetail.skuDisplayName_en[0]}</h5>
            <Img src={
              [productDetail.images[1],
              fallBack]
             }
-            />
-           <p>{productDetail.productNo}</p>
+           />
          </div>
        })}
       </div>
