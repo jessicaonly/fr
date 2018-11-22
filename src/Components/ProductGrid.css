@@ -1,4 +1,4 @@
-.wrapper {
+.product_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
@@ -6,7 +6,7 @@
 }
 
 
-.item {
+.each_item {
   background-color: #80cbc4;
   border: 1px solid #fff;
   padding: 20px;
