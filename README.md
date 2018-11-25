@@ -1,5 +1,5 @@
 
-A music product search app
+🎸A music product search app! 🎸 
  
  
  <p>
