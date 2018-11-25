@@ -14,8 +14,8 @@
  <li>Navigate to other sites</li>
  <ul>
 <p>
-**npm start** to run dev build on port 3000
+ <b>npm start</b> to run dev build on port 3000
 </p>
  <p>
-**serve build** to run production build on port 9000
-  </p>
+  <b>serve build</b> to run production build on port 9000
+</p>
