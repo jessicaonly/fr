@@ -12,7 +12,9 @@
  <li>Filter products by Series and Product Type</li>
  <li>View individual product details</li>
  <li>Navigate to other sites</li>
- <ul>
+ </ul>
+  
+<p></b>npm install</b> to initialize/download dependencies</p>
 <p>
  <b>npm start</b> to run dev build on port 3000
 </p>
