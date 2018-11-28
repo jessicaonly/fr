@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Sidebar.css';
 
+//component to show sidebar with different categories/filters
 
 class SideBar extends Component {
   constructor(props){
@@ -10,24 +11,21 @@ class SideBar extends Component {
       productType: [],
     };
   }
-
-
+  //push series and product type from JSON to this component's state, to render onto DOM
   componentWillMount(){
     this.props.products.map((singleProduct, index) => {
-      if (this.state.series.indexOf(singleProduct.series) === -1){
-        this.state.series.push(singleProduct.series);
-      }
+      return this.state.series.indexOf(singleProduct.series) === -1 ? 
+        this.state.series.push(singleProduct.series) : null;
     });
     
     this.props.products.map((singleProduct, index) => {
-      if (this.state.productType.indexOf(singleProduct.productType) === -1){
-        this.state.productType.push(singleProduct.productType);
-      }
+      return this.state.productType.indexOf(singleProduct.productType) === -1 ? 
+        this.state.productType.push(singleProduct.productType) : null;
     });
+  
   }
  
   render() {
-    console.log(this.props)
     return (
       <div className="sidebar_wrapper">
         <div className="series">

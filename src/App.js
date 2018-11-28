@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ProductGrid from './Components/ProductGrid';
 import Products from './products.json';
-import SideBar from './Components/SideBar';
+import SideBar from './Components/Sidebar';
 import './App.css';
 import logo from './Assets/logo.png';
 import footer from './Assets/footer.png';
@@ -18,6 +18,8 @@ class App extends Component {
     this.productTypeHandler = this.productTypeHandler.bind(this);
   }
 
+  //two methods below handle filtering products by category 
+  
   seriesHandler(e){
     e.preventDefault();
     const target = e.target;
@@ -25,9 +27,8 @@ class App extends Component {
     let fullProductList = Products.documents;
 
     fullProductList.map((singleProduct, index) => {
-      if (singleProduct.series === target.name){
-       filteredProducts.push(singleProduct);
-      }
+      return singleProduct.series === target.name ? 
+      filteredProducts.push(singleProduct) : null;
     });
     this.setState({
       products: filteredProducts
@@ -46,9 +47,8 @@ class App extends Component {
     };
 
     fullProductList.map((singleProduct, index) => {
-      if (singleProduct.productType === target.name){
-       filteredProducts.push(singleProduct);
-      }
+      return singleProduct.productType === target.name ? 
+      filteredProducts.push(singleProduct) : null;
     });
     this.setState({
       products: filteredProducts

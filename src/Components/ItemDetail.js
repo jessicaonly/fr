@@ -4,6 +4,7 @@ import Img from 'react-image';
 import fallBack from '../Assets/fender.jpg'
 
 
+//dumb component to show individual item's details
 
 const ItemDetail = ({ handleClose, show, name, pic, type, brand, color, productNumber }) => {
   const showHideClassName = show ? "item display-block" : "item display-none";

@@ -5,6 +5,7 @@ import fallBack from '../Assets/fender.jpg'
 import ItemDetail from './ItemDetail';
 
 
+//component to show grid of items
 
 class ProductGrid extends Component {
   constructor(props){
@@ -28,7 +29,6 @@ class ProductGrid extends Component {
     });
   }
 
-
   hideDetail = () => {
     this.setState({ show: false });
     console.log(this.state);
@@ -49,7 +49,7 @@ class ProductGrid extends Component {
           color={this.state.featuredColor}
           productNumber={this.state.productNumber}
       >
-        <p> Test </p>
+        
       </ItemDetail>
        </div>
        
