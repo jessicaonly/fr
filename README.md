@@ -19,5 +19,5 @@
  <b>npm start</b> to run dev build on port 3000
 </p>
  <p>
-  <b>serve build</b> to run production build on port 9000
+  <b>serve build</b> to run production build on port 5000
 </p>
